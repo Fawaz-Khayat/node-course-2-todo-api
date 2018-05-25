@@ -7,7 +7,13 @@ let db = {
     mlab: 'mongodb://heroku:1234@ds155644.mlab.com:55644/todoapp'
 }
 
-const db_url = db.localhost || db.mlab ;
+if (process.env.NODE && ~process.env.NODE.indexOf("heroku")){
+    var db_url = db.mlab ;
+} else{
+    var db_url = db.localhost;
+}
+
+
 mongoose.connect(db_url,{
     useMongoClient:true
 })
@@ -26,3 +32,4 @@ mongoose.connect(db_url,{
     });
 
 module.exports = {mongoose};
+JSON.stringify
