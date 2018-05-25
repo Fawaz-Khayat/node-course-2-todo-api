@@ -13,7 +13,9 @@ let db = {
 //     var db_url = db.localhost;
 // }
 
-const db_url = process.env.PORT ? db.mlab : db.localhost;
+//const db_url = process.env.PORT ? db.mlab : db.localhost;
+
+const db_url = process.env.MONGODB_URI || db.mlab;
 mongoose.connect(db_url,{
     useMongoClient:true
 })
