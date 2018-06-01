@@ -106,6 +106,23 @@ app.patch('/todos/:id', (req,res)=>{
         });
 });
 
+// Challenge : Users
+
+app.post('/users',(req, res)=>{
+    var body = _.pick(req.body, ['email', 'password']);
+    var user = new User(body);
+
+    user.save()
+        .then(
+            (user)=>{
+                res.send(user);
+            },(error)=>{
+                res.status(400).send(error);
+            })
+        .catch((e)=>{
+            res.status(400).send(error);
+        });
+});
 
 
 app.listen(port, ()=>{
