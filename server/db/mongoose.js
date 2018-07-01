@@ -1,4 +1,5 @@
-var mongoose = require('mongoose');
+"use strict";
+let mongoose = require('mongoose');
 
 mongoose.Promise = global.Promise;
 
@@ -8,9 +9,9 @@ let db = {
 }
 
 // if (process.env.NODE && ~process.env.NODE.indexOf("heroku")){
-//     var db_url = db.mlab ;
+//     let db_url = db.mlab ;
 // } else{
-//     var db_url = db.localhost;
+//     let db_url = db.localhost;
 // }
 
 //const db_url = process.env.PORT ? db.mlab : db.localhost;

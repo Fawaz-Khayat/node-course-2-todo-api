@@ -1,6 +1,7 @@
-var {User} = require('./../models/user');
-var authenticate = (req, res, next)=>{
-    var token = req.header('x-auth');
+"use strict";
+let {User} = require('./../models/user');
+let authenticate = (req, res, next)=>{
+    let token = req.header('x-auth');
     User.findByToken(token).then((user)=>{
         if(!user){
             return Promise.reject();

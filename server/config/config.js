@@ -1,4 +1,5 @@
-var env = process.env.NODE_ENV || 'development';
+"use strict";
+let env = process.env.NODE_ENV || 'development';
 console.log('---------------------------');
 console.log('env ****** ', env);
 console.log('---------------------------');
