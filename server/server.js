@@ -118,18 +118,15 @@ app.post('/users',(req, res)=>{
 
     user.save()
         .then(()=>{
-                    return user.generateAuthToken();
-                    //res.send(user);
-                },
-                (error)=>{
-                    res.status(400).send(error);
-                })
-                .then((token)=>{
-                    res.header('x-auth',token).send(user);
+                return user.generateAuthToken();
+                //res.send(user);
             })
-        .catch((e)=>{
-            res.status(400).send(error);
-        });
+            .then((token)=>{
+                res.header('x-auth',token).send(user);
+            })
+            .catch((e)=>{
+                res.status(400).send(e);
+            })
 });
 
 
