@@ -3,20 +3,7 @@ let mongoose = require('mongoose');
 
 mongoose.Promise = global.Promise;
 
-let db = {
-    localhost: 'mongodb://localhost:27017/TodoApp' ,
-    mlab: 'mongodb://heroku:1234@ds155644.mlab.com:55644/todoapp'
-}
-
-// if (process.env.NODE && ~process.env.NODE.indexOf("heroku")){
-//     let db_url = db.mlab ;
-// } else{
-//     let db_url = db.localhost;
-// }
-
-//const db_url = process.env.PORT ? db.mlab : db.localhost;
-
-const db_url = process.env.MONGODB_URI || db.mlab;
+const db_url = process.env.MONGODB_URI;
 mongoose.connect(db_url,{
     useMongoClient:true
 })
