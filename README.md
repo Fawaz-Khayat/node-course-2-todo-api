@@ -11,5 +11,5 @@ This repository covers sections 7 & 8, including the following topics:
 * Postman  
 * Validators  
 * Deploy to heroku.com  
-* Security and Authinticatiodn 
-* Json Web Token (JWT)
+* Security and Authentication 
+* JSON Web Token (JWT)
